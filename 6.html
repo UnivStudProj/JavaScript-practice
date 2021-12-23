@@ -1,0 +1,189 @@
+<html>
+	<head><title>6</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var a = 10;
+				var b = 3;
+				document.write(a%b);
+			</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var a;
+				var b;
+				a % b == 0 ? document.write("Делится") : document.write("Делится с остатком");
+			</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var st = Math.pow(2, 10);
+					document.write(st);
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write(Math.sqrt(245));
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var a = [4, 2, 5, 19, 13, 0, 10];
+					var res = 0;
+					for (let i = 0; i < a.length; i++) {
+						res += Math.pow(4, 2); 
+					}
+					document.write(Math.sqrt(res));
+				</script>
+			</div>		
+			<div class='column'>Задание 5</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write("whole = " + Math.sqrt(379).toFixed() + "<br>");
+					document.write("decimal = " + Math.sqrt(379).toFixed(1) + "<br>");
+					document.write("hundredths = " + Math.sqrt(379).toFixed(2));
+				</script>
+			</div>		
+			<div class='column'>Задание 6</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var obj = {"floor" : Math.floor(Math.sqrt(587)), "ceil" : Math.ceil(Math.sqrt(587))}; 
+					document.write("floor = " + obj["floor"] + "<br>");
+					document.write("ceil = " + obj["ceil"]);
+				</script>
+			</div>		
+			<div class='column'>Задание 7</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var a = [4, -2, 5, 19, -130, 0, 10];
+					document.write("Max = " + Math.max.apply(null, a) + "<br>");
+					document.write("Min = " + Math.min.apply(null, a));
+				</script>
+			</div>		
+			<div class='column'>Задание 8</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write(Math.floor(Math.random() * (100 - 1 + 1)) + 1);
+				</script>
+			</div>		
+			<div class='column'>Задание 9</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write("if min is 1, max is 100" + "<br>");
+					var a = [];
+					var i = 10;
+					while (i != 0) {
+						a.push(Math.floor(Math.random() * (100 - 1 + 1)) + 1);
+						i -= 1;
+						}
+					document.write(a);
+				</script>
+			</div>		
+			<div class='column'>Задание 10</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write("\"a\" and \"b\" are randoms" + "<br>");
+					var a = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+					var b = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+					document.write(Math.abs(a - b));
+				</script>
+			</div>		
+			<div class='column'>Задание 11</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var a1 = 3;
+					var b1 = 5;
+					var c1 = Math.abs(a1 - b1);
+					document.write(c1 + "<br>");
+					var a2 = 6;
+					var b2 = 1;
+					var c2 = Math.abs(a2 - b2);
+					document.write(c2);
+				</script>
+			</div>		
+			<div class='column'>Задание 12</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var arr = [12, 15, 20, 25, 59, 79];
+					var res = 0;
+					for (let i = 0; i < arr.length; i++) {
+						res += arr[i];
+					}
+					document.write(res / arr.length);
+				</script>
+			</div>		
+			<div class='column'>Задание 13</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var num = 4;
+					var res = 1;
+					while (num !=0) {
+						res *= num;
+						num -= 1;
+						}
+					document.write("!4 = " + res);
+				</script>
+			</div>		
+			<div class='column'>Задание 14</div>
+		</div>
+	</body>
+</html>

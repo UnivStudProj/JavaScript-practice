@@ -1,0 +1,68 @@
+<html>
+	<head><title>22</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<p id="test1">0</p>
+				<input type="submit" id="input1" value="Press" onclick="timer1()"><br><br>
+				<script>
+					if (true) {
+						function timer1() {
+							window.setInterval(go1, 1000);
+						}
+
+						function go1() {
+							let txt = document.getElementById('test1');
+							txt.innerHTML = parseInt(txt.innerHTML) + 1;
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<p id="test2">0</p>
+				<input type="submit" id="input2_1" value="Start Timer" onclick="timer2_1()">
+				<input type="submit" id="input2_2" value="Stop Timer" onclick="timer2_2()" disabled>
+				<script>
+					if (true) {
+						function timer2_1() {
+							window.timerId = window.setInterval(go1, 1000);
+							document.getElementById('input2_1').disabled = true;
+							document.getElementById('input2_2').disabled = false;
+						}
+
+						function timer2_2() {
+							window.clearInterval(window.timerId);
+							document.getElementById('input2_1').disabled = false;
+							document.getElementById('input2_2').disabled = true;
+						}
+
+						function go1() {
+							let txt = document.getElementById('test2');
+							txt.innerHTML = parseInt(txt.innerHTML) + 1;
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+	<body>
+<html>

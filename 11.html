@@ -1,0 +1,65 @@
+<html>
+	<head><title>11</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					function usr_flag_check(arr) {
+						for (let i = 0; i < arr.length; i++) {
+							if (arr[i] == 5) return true;
+						}
+						return false;
+					}
+					document.write(usr_flag_check([1, 1, 2, 3, 5]));
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					function usr_flag_check(num) {
+						let i = 2;
+						while (i != num) {
+							return num % i == 0 ? true : false;
+						}
+					}
+					document.write(usr_flag_check([31]));
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					function usr_flag_check(arr) {
+						for (let i = 0; i < arr.length; i++) {
+							if (i == 0) continue;
+							if (arr[i] == arr[i - 1]) return "да";
+						}
+						return "нет";
+					}
+					document.write(usr_flag_check([1, 1, 2, 3, 5]));
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+	</body>
+</html>

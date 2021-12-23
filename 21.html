@@ -1,0 +1,180 @@
+<html>
+	<head><title>21</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var date = new Date;
+					document.write(date.getDate());
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					var date = new Date;
+					document.write(date.getMonth());
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					var date = new Date;
+					document.write(date.getFullYear());
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					var date = new Date;
+					function getZero(num) {
+						return num = num < 10 ? '0' + num : num;
+					}
+					day4 = getZero(date.getDate()) + '.';
+					month4 = getZero(date.getMonth()) + '.';
+					year4 = date.getFullYear();
+					document.write(day4 + month4 + year4);
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					var date = new Date;
+					document.write(date.getDay());
+				</script>
+			</div>		
+			<div class='column'>Задание 5</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					var date = new Date;
+					function showDay(day_w) {
+						let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+						return days[day_w];
+					}
+					document.write(showDay(date.getDay()));
+				</script>
+			</div>		
+			<div class='column'>Задание 6</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					var date = new Date(2015, 0, 7);
+					function showDay(day_w) {
+						let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+						return days[day_w];
+					}
+					document.write(showDay(date.getDay()));
+				</script>
+			</div>		
+			<div class='column'>Задание 7</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					var date = new Date();
+					document.write(Math.floor(date.getTime() / (1000 * 60)));
+				</script>
+			</div>		
+			<div class='column'>Задание 8</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					if (true) {
+						let date = new Date();
+						let date_e = Date.parse('1988-03-01T00:00:00');
+						let date_n = date.getTime();
+						let res = date_n - date_e;
+						document.write(Math.floor(res / (1000 * 60 * 60)));
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 9</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					if (true) {
+						let date = new Date();
+						let date_n = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
+						let res = date.getTime() - date_n.getTime();
+						document.write(Math.floor(res / (1000)));
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 10</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					if (true) {
+						let date = new Date();
+						let date_e = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1, 0, 0, 0);
+						let res = date_e.getTime() - date.getTime();
+						document.write(Math.floor(res / (1000)));
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 11</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="text" id="input12_1" onfocusout="go12()"><br><br>
+				<input type="text" id="input12_2" disabled>
+				<script>
+					if (true) {
+						function go12() {
+							let input = document.getElementById('input12_1').value;
+							let date_e = Date.parse(input + 'T00:00:00');
+							let date_now = new Date();
+							let to_days = 1000 * 3600 * 24;
+							let diff1 = (date_now.getTime() - date_e) / to_days / 365;
+							let diff2 = Math.ceil((date_now.getTime() - date_e) / to_days / 365);
+							let extra_d = Math.ceil(diff2 / 4);
+							let t_diff = (diff2 - diff1) * 365 + extra_d;
+							let input2 = document.getElementById('input12_2');
+							input2.value = Math.ceil(t_diff)
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 12</div>
+		</div>
+	<body>
+<html>

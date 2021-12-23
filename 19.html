@@ -1,0 +1,402 @@
+<html>
+	<head><title>19</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+			.ex4 {
+			height: 300px;
+			width: 300px;
+			border: 1px solid red;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<button onclick="alert('Привет!')">Нажми на меня</button>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<button onmouseover="alert('Привет!')">Наведи на меня</button>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<button ondblclick="alert('Привет!')">Двойной счелчок по мне!</button>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<div class='ex4' onmouseout="alert('Привет!')">
+					Наведи на меня мышь - а потом убери!
+				</div>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<input type="text" id="input5" value="Ку-ку">
+				<button onclick="buttonClick5()">Нажми на меня!</button>
+				<script>
+					function buttonClick5() {
+						let input5 = document.getElementById('input5');
+						alert(input5.value);
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 5</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<input type="text" id="input6" value="Ку-ку">
+				<button onclick="buttonClick6()">Нажми на меня!</button>
+				<script>
+					function buttonClick6() {
+						let input6 = document.getElementById('input6');
+						input6.value = "Ой, я поменял свой текст!";
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 6</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<img src="materials/1.jpg" width="150" id="test7"><br>
+				<button onclick="go7()">Нажми на меня!</button>
+				<script>
+					function go7() {
+						elem7 = document.getElementById('test7');
+						elem7.src = 'materials/2.jpg';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 7</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<input type="text" value="Нажми на меня!" onfocus="go8(this)">
+				<script>
+					function go8(elem8) {
+						alert(elem8.value);
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 8</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<input type="text" value="Нажми на меня!" onfocus="go9(this)">
+				<script>
+					function go9(elem9) {
+						elem9.value = "Ой, я поменял текст!";
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 9</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<style>input { width: 400px; }</style>
+				<input type="text" value="Нажми на меня!" onfocus="go10(this)" onblur="stop10(this)">
+				<script>
+					function go10(elem10) {
+						elem10.value = "Ой, я поменял текст!";
+					}
+					function stop10(elem10) {
+						elem10.value = "Ой, а теперь еще раз поменял текст";
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 10</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<style>input { width: 300px; }</style>
+				<p>Это input type="submit".</p>
+				<input type="submit" value="Нажми на меня!" onfocus="go11(this)">
+				<script>
+					function go11(elem11) {
+						elem11.value = "Ку-ку";
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 11</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<style>input { width: 300px; }</style>
+				<p>Это input type="submit".</p>
+				<input type="submit" value="Нажми на меня!" onfocus="go12(this)">
+				<script>
+					function go12(elem12) {
+						elem12.value = "О, теперь на меня больше не нажать!";
+						elem12.disabled = true;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 12</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<img src="materials/1.jpg" width="150" onmouseover="over13(this)" onmouseout="out13(this)">
+				<script>
+					function over13(elem13) {
+						elem13.src = 'materials/2.jpg';
+					}
+					function out13(elem13) {
+						elem13.src = 'materials/1.jpg';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 13</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="text" value="Ку-ку" id="test14">
+				<button onclick="go14()">Нажми на меня!</button>
+				<script>
+					function go14() {
+						elem14 = document.getElementById('test14');
+						elem14.style.color = 'red';
+						elem14.style.width = '300px';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 14</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="text" value="Ку-ку" id="test15">
+				<button onclick="hide15()">Нажми на меня!</button>
+				<button onclick="show15()">Нажми потом на меня!</button>
+				<script>
+					function hide15() {
+						elem15 = document.getElementById('test15');
+						elem15.style.display = 'none';
+					}
+					function show15() {
+						elem15 = document.getElementById('test15')
+						elem15.style.display = 'inline-block';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 15</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="text" value="Ку-ку" id="test16">
+				<button onclick="go16()">Нажми на меня!</button>
+				<script>
+					function go16() {
+						elem16 = document.getElementById('test16');
+						elem16.value = "Ой, я поменял свой текст и css!";
+						elem16.style.width = "300px";
+						elem16.style.height = "50px";
+						elem16.style.color = "red";
+						elem16.style.borderRadius = "10px";
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 16</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<style> input { width: 300px; margin-bottom: 20px; }</style>
+				<p>Это input type="submit".</p>
+				<input type="submit" onclick="block17()" value="О на меня снова можно нажимать!" id="block17">
+				<input type="submit" onclick="unblock17()" value="Нажми, чтобы отблокировать элемент" style="display: none;" id="unblock17">
+				<script>
+					function block17() {
+						var block17 = document.getElementById("block17");
+						var unblock17 = document.getElementById("unblock17");
+						block17.disabled = true;
+						block17.value = "О, теперь на меня больше не нажать!";
+						unblock17.style.display = "inline";
+					}
+					function unblock17() {
+						var block17 = document.getElementById("block17");
+						var unblock17 = document.getElementById("unblock17");
+						block17.disabled = false;
+						block17.value = "О, на меня снова можно нажимать!";
+						unblock17.style.display = "none";
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 17</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<style> input { width: 300px; margin-bottom: 20px; }</style>
+				<p>Кнопка считает кол-во нажатий по ней</p>
+				<input type="submit" onclick="go18(this)" value="0">
+				<script>
+					function go18(elem18) {
+						elem18.value = Number(elem18.value) + 1;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 18</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<style> input[type="text"] { width: 300px; margin-bottom: 20px; }</style>
+				<input type="submit" value="Ку-ку" id="test19">
+				<button onclick="go19()">Нажми на меня!</button>
+				<script>
+					function go19() {
+						elem19 = document.getElementById("test19");
+						elem19.value = "Теперь я плаваю справа!";
+						elem19.style.cssFloat = "right";
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 19</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<style> input[type="text"] { width: 300px; margin-bottom: 20px; }</style>
+				<input type="submit" value="Ку-ку" id="test20" class="eee www ddd">
+				<button onclick="go20()">Нажми на меня!</button>
+				<script>
+					function go20() {
+						elem20 = document.getElementById("test20");
+						elem20.value = "Мои css классы: " + elem20.className;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 20</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<style> input { width: 100px; }</style>
+				<input type="submit" value="Привет!" id="input21_1">
+				<input type="submit" value="Пока!" id="input21_2">
+				<button onclick="go21()">Нажми на меня!</button>
+				<script>
+					function go21() {
+						let elem21_1 = document.getElementById("input21_1");
+						let elem21_2 = document.getElementById("input21_2");
+						let tmp21 = elem21_1.value;
+						elem21_1.value = elem21_2.value;
+						elem21_2.value = tmp21;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 21</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<style> input { width: 200px; }</style>
+				<p>При нажатии на кнопку в правом инпуте появится квадрат числа из левого инпута.</p>
+				<input type="text" value placeholder="Введите число!" id="input22_1">
+				<input value="Здесь появится результат" id="input22_2" disabled>
+				<button onclick="go22()">Нажми на меня!</button>
+				<script>
+					function go22() {
+						let num22 = document.getElementById("input22_1");
+						let result22 = document.getElementById("input22_2");
+						result22.value = num22.value ** 2;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 22</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<style> input { width: 200px; }</style>
+				<p>При нажатии на кнопку в правом инпуте появится квадрат числа из левого инпута.</p>
+				<input type="text" value placeholder="Введите число!" id="input23_1"><br><br>
+				<input value="Здесь появится результат" id="input23_2" disabled><br><br>
+				<button onclick="go23()">Нажми на меня!</button>
+				<script>
+					function go23() {
+						let num23 = document.getElementById("input23_1");
+						let result23 = document.getElementById("input23_2");
+						if (isNaN(num23.value)) alert("Введено не число!");
+						else result23.value = num23.value ** 2;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 23</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<style> input { width: 200px; }</style>
+				<p>Обратите внимание на курсор в различных состояниях.</p>
+				<input type="submit" onclick="go24(this)" value="Нажми на меня!">
+				<script>
+					function go24(elem24) {
+						elem24.disabled = true;
+						elem24.style.cursor = "not-allowed";
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 24</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<style> input { width: 200px; } </style>
+				<input type="text" id="input25"><br><br>
+				<input type="submit" onclick="add25('+')" value="Я добавлю +">
+				<input type="submit" onclick="add25('-')" value="Я добавлю -">
+				<input type="submit" onclick="add25('/')" value="Я добавлю /">
+				<input type="submit" onclick="add25('*')" value="Я добавлю *"><br><br>
+				<input type="submit" onclick="add25('1')" value="1">
+				<input type="submit" onclick="add25('2')" value="2">
+				<input type="submit" onclick="add25('3')" value="3">
+				<input type="submit" onclick="add25('4')" value="4">
+				<input type="submit" onclick="add25('5')" value="5">
+				<input type="submit" onclick="add25('6')" value="6">
+				<input type="submit" onclick="add25('7')" value="7">
+				<input type="submit" onclick="add25('8')" value="8">
+				<input type="submit" onclick="add25('9')" value="9">
+				<input type="submit" onclick="add25('0')" value="0">
+				<script>
+					function add25(elem25) {
+						let input25 = document.getElementById("input25");
+						input25.value += elem25;	
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 25</div>
+		</div>
+	<body>
+<html>

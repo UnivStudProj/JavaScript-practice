@@ -1,0 +1,245 @@
+<html>
+	<head><title>Урок №5</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid gold;
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				for (var i = 1; i <= 100; i++) {
+					document.write(i + '<br>');
+				}
+			</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				for (var i = 11; i <= 33; i++) {
+					document.write(i + '<br>');
+				}
+			</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				for (var i = 0; i <= 100; i++) {
+					if (i % 2 == 0) {
+						document.write(i + '<br>');
+					}
+				}
+			</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var sum_n = 0;
+				for (var i = 1; i <= 100; i++) {
+						sum_n += i;
+				}
+				document.write(sum_n);
+			</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var arr = [1, 2, 3, 4, 5];
+				for (let i = 0; i < arr.length; i++) {
+					document.write(arr[i]);
+				}
+			</script>
+			</div>		
+			<div class='column'>Задание 5</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var arr = [1, 2, 3, 4, 5];
+				var result = 0;
+				for (let i = 0; i < arr.length; i++) {
+					result += arr[i];
+				}
+				document.write(result);
+			</script>
+			</div>		
+			<div class='column'>Задание 6</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var obj = {green: 'зеленый', red: 'красный', blue: 'голубой'};
+				for (var key in obj) {
+					document.write('Ключ - ' + key + ', ' + 'элемент - ' + obj[key] + '<br>');
+				}
+			</script>
+			</div>		
+			<div class='column'>Задание 7</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var obj = {Коля: 200, Вася: 300, Петя: 400};
+				for (var key in obj) {
+					document.write(key + ' - зарплата ' + obj[key] + ' долларов' + '<br>');
+				}
+			</script>
+			</div>		
+			<div class='column'>Задание 8</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var arr = [2, 5, 9, 15, 0, 4];
+				for (let i = 0; i < arr.length; i++) {
+					if (arr[i] > 3 && arr[i] < 10) {
+						document.write(arr[i] + '<br>');
+					}
+				}
+			</script>
+			</div>		
+			<div class='column'>Задание 9</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var arr = [];
+				var result = 0;
+				let func = (min, max) => Math.floor(Math.random() * (max - min) + min);
+				for (let i = 0; i < 10; i++) {
+					arr.push(func(-10, 10));
+				}
+				for (let i = 0; i < arr.length; i++) {
+					if (arr[i] >= 0) {
+						result += arr[i];
+					}
+				}
+				document.write(result);
+			</script>
+			</div>		
+			<div class='column'>Задание 10</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var arr = [1, 2, 5, 9, 4, 13, 4, 10];
+				for (let i = 0; i < arr.length; i++) {
+					if (arr[i] == 4) {
+						document.write('Есть!' + '<br>');
+						break;
+					}
+				}
+			</script>
+			</div>		
+			<div class='column'>Задание 11</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var arr = [10, 20, 30, 50, 235, 3000];
+				for (let i = 0; i < arr.length; i++) {
+					if ([1, 2, 5].includes(Number(String(arr[i])[0]))) {
+						document.write(arr[i] + '<br>');
+					}
+				}
+			</script>
+			</div>		
+			<div class='column'>Задание 12</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+				var result = '-';
+				for (let i = 0; i < arr.length; i++) {
+					result += arr[i] + '-';
+				}
+				document.write(result);
+			</script>
+			</div>		
+			<div class='column'>Задание 13</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var arr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+				var b_str = '';
+				for (let i = 0; i < arr.length; i++) {
+					if (i == 0 || i == 6) {
+					document.write(arr[i].bold() + '<br>');
+					} else {
+					document.write(arr[i] + '<br>');
+					}
+				}
+			</script>
+			</div>		
+			<div class='column'>Задание 14</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var arr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+				var now = new Date();
+				for (let i = 0; i < arr.length; i++) {
+					if (i == now.getDay()) {
+						document.write(arr[i].italics() + '<br>');
+					} else {
+						document.write(arr[i] + '<br>');
+					}
+				}
+			</script>
+			</div>		
+			<div class='column'>Задание 15</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+			<script>
+				var n = 1000;
+				var num = 0;
+				while (n > 50) {
+					n /= 2;
+					num += 1;
+				}
+				document.write('n = ' + n + '<br>');
+				document.write('num = ' + num + '<br>');
+			</script>
+			</div>
+			<div class='column'>Задание 16</div>
+		</div>
+	</body>
+</html>

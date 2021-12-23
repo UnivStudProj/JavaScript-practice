@@ -1,0 +1,147 @@
+<html>
+	<head><title>15</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					function isNumberInRange(num) {
+						if (num > 0 && num < 10) {
+							return true;
+						}
+						return false;
+					}
+					document.write(isNumberInRange((Math.random * (100 - 1)) + 1));
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var arr1 = [-1, 1, 1, 2, 3, 5];
+					var arr2 = [];
+					function isNumberInRange(arr) {
+						for (let i = 0; i < arr.length; i++) {
+							if (arr[i] > 0 && arr[i] < 10) {
+								arr2.push(i);
+							}
+						}
+					}
+					isNumberInRange(arr1);
+					document.write(arr2);
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var num1 = 87;
+					function getDigitsSum(int_num) {
+						let str = String(int_num);
+						let chr_arr = str.split("");
+						let sum_n = 0;
+						for (let i = 0; i < chr_arr.length; i++) {
+							sum_n += Number(chr_arr[i]);
+						}
+						return sum_n;
+					}
+					document.write(getDigitsSum(num1));
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					function getDigitsSum() {
+						let count_i = 0;
+						for (let j = 1; j < 2022; j++) {
+							let str = String(j);
+							let chr_arr = str.split("");
+							let sum_n = 0;
+							for (let i = 0; i < chr_arr.length; i++) {
+								sum_n += Number(chr_arr[i]);
+								if (sum_n == 13) {
+									count_i += 1;
+								}
+							}
+						}
+						return count_i;
+					}
+					document.write(getDigitsSum());
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					function isEven(num) {
+						res = num % 2 == 0 ? true : false;
+						return res;
+					}
+					document.write(isEven(21));
+				</script>
+			</div>		
+			<div class='column'>Задание 5</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var arr1 = [1, 1, 2, 3, 5, 8];
+					function isEven(arr) {
+						let arr2 = [];
+						for (let i = 0; i < arr.length; i++) {
+							if (arr[i] % 2 == 0) {
+								arr2.push(arr[i]);
+							}
+						}
+						return arr2;
+					}
+					document.write(isEven(arr1));
+				</script>
+			</div>		
+			<div class='column'>Задание 6</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var num1 = 30;
+					function getDivisors(num) {
+						let div_arr = [];
+						for (let i = 1; i < num + 1; i++) {
+							if (num % i == 0) {
+								div_arr.push(i);
+							}
+						}
+						return div_arr;						
+					}
+					document.write(getDivisors(num1));
+				</script>
+			</div>		
+			<div class='column'>Задание 7</div>
+		</div>
+	<body>
+<html>

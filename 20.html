@@ -1,0 +1,296 @@
+<html>
+	<head><title>20</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<p id='test1'> При нажатии на кнопку текст в абзаце поменяется. </p>
+				<input type="submit" value="Нажми на меня!" onclick="go1()">
+				<script>
+					function go1() {
+						let test = document.getElementById('test1');
+						test.innerHTML = 'Ку-ку! А я <b>жирный</b>!';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<p id='test2'> При нажатии на кнопку текст в абзаце поменяется. </p>
+				<input type="submit" value="Нажми на меня!" onclick="go2()">
+				<script>
+					function go2() {
+						let test = document.getElementById('test2');
+						test.innerHTML = '<h3>Абзац превратился в h3!</h3>';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<p id='test3'> При нажатии на кнопку абзац станет h3, но текст останется. </p>
+				<input type="submit" value="Нажми на меня!" onclick="go3()">
+				<script>
+					function go3() {
+						let test = document.getElementById('test3');
+						test.outerHTML = '<h3>' + test.innerHTML + '</h3>';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<input type="text" value id='input4_1'> + 
+				<input type="text" value id='input4_2'> = 
+				<span id='result'>?</span>
+				<br>
+				<br>
+				<button onclick="go4()">'Нажмите чтобы сложить'</button>
+				<script>
+					function go4() {
+						let l = +document.getElementById('input4_1').value;
+						let r = +document.getElementById('input4_2').value;
+						let result = document.getElementById('result');
+						result.innerHTML = l + r;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<p> При нажатии на кнопку текст в каждом абзаце поменяется. </p>
+				<p> При нажатии на кнопку текст в каждом абзаце поменяется. </p>
+				<p> При нажатии на кнопку текст в каждом абзаце поменяется. </p>
+				<p> При нажатии на кнопку текст в каждом абзаце поменяется. </p>
+				<h2>А я h2 и не поменяюсь!</h2>
+				<button onclick="go5()">'Нажмите на меня!'</button>
+				<script>
+					function go5() {
+						let p = document.getElementsByTagName('p');
+						for (let i = 0; i < p.length; i++) {
+							p[i].innerHTML = 'Ку-ку!';
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 5</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<h2 class="www6">Заголовок с классом www.</h2>
+				<p class="www6">Абзац с классом www.</p>
+				<p class="www6">Абзац с классом www.</p>
+				<p>Просто абзац, не поменяется.</p>
+				<button onclick="go6()">Нажмите на меня!</button>
+				<script>
+					function go6() {
+						let www = document.getElementsByClassName('www6');
+						for (let i = 0; i < www.length; i++) {
+							www[i].innerHTML = i + 1;
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 6</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<h2 class="www7">Заголовок с классом www, не поменяется.</h2>
+				<p class="www7">Абзац с классом www.</p>
+				<p class="www7">Абзац с классом www.</p>
+				<p class="www7">Абзац с классом www.</p>
+				<p>Просто абзац, не поменяется.</p>
+				<button onclick="go7()">Нажмите на меня!</button>
+				<script>
+					function go7() {
+						let www = document.querySelectorAll('p.www7');
+						for (let i = 0; i < www.length; i++) {
+							www[i].innerHTML = i + 1;
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 7</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<p id="test8" class='my-class8'>Абзац class='my-class8'.</p>
+				<input type="submit" value="Нажми - и я выведу класс абзаца." onclick="go8()">
+				<script>
+					function go8() {
+						let test = document.getElementById('test8');
+						alert(test.getAttribute('class'));
+						}
+				</script>
+			</div>		
+			<div class='column'>Задание 8</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<style>
+					.my-class9 { color: red; }
+				</style>
+				<p id="test9" class='my-class9'>Абзац с class='my-class'. Класс задает красный цвет.</p><br>
+				<input type="submit" value="Нажми - и я выведу класс абзаца." onclick="show9()"><br><br> 
+				<input type="submit" value="Нажми - и я удалю class для абзаца." onclick="del9()"><br><br>
+				<script>
+					function show9() {
+						let test = document.getElementById('test9');
+						alert(test.getAttribute('class'));
+					}
+					function del9() {
+						let test = document.getElementById('test9');
+						test.removeAttribute('class');
+						alert('Класс удален! Нажмите на первую кнопку чтобы проверить это!');
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 9</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<style>
+					.my-class10 { color: red; }
+				</style>
+				<p id="test10" class='my-class10 class'>Абзац с class='my-class class'. Класс 'my-class' задает красный цвет.</p><br>
+				<input type="submit" value="Нажми - и я выведу класс абзаца." onclick="show10()"><br><br> 
+				<input type="submit" value="Нажми - и я изменю атрибут class для абзаца на 'new-class'." onclick="del10()"><br><br>
+				<script>
+					function show10() {
+						let test = document.getElementById('test10');
+						alert(test.getAttribute('class'));
+					}
+					function del10() {
+						let test = document.getElementById('test10');
+						test.setAttribute('class', 'new-class');
+						alert('Класс изменен! Нажмите на первую кнопку чтобы проверить это!');
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 10</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<input id='text11' type="text" placeholder="Введи в меня текст!" onkeyup="go11(this)">
+				<span id="text11_s"></span>
+				<script>
+					function go11(text11) {
+						let text = document.getElementById('text11_s');
+						text.innerHTML = text11.value;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 11</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<a href="http://google.ru">ссылка 1</a><br><br>
+				<a href="http://tut.by">ссылка 2</a><br><br>
+				<a href="http://yandex.ru">ссылка 3</a><br><br>
+				<input type="submit" value="Нажми на меня!" onclick="go11()">
+				<script>
+					function go11(text11) {
+						let elements =  document.getElementsByTagName('a');
+						for (let i = 0; i < elements.length; i++) {
+							elements[i].innerHTML += '(' + elements[i].getAttribute('href') + ')';
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 12</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id='text13'>При нажатии на кнопку текст в абзаце поменяется.</p>
+				<input type="submit" value="Нажмите на меня!" onClick='go13(this)'>
+				<script>
+					function go13(elem13) {
+						elem13.disabled = true;
+						elem13.value = 'О, на меня больше нельзя нажать!';
+						let txt = document.getElementById('text13');
+						txt.style.color = 'red';
+						txt.innerHTML = 'Привет, мир!';
+
+					}
+				</script> 
+			</div>		
+			<div class='column'>Задание 13</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id="p13">Абзац с текстом.</p>
+				<p id="p13">Абзац с текстом.</p>
+				<p id="p13">Абзац с текстом.</p>
+				<p id="p13">Абзац с текстом.</p>
+				<p id="p13">Абзац с текстом.</p>
+				<p id="p13">Абзац с текстом.</p>
+				<p id="p13">Абзац с текстом.</p>
+				<p id="p13">Абзац с текстом.</p>
+				<input type="submit" value="Нажмите на меня!" onClick='go13()'>
+				<script>
+					function go13() {
+						let p = document.querySelectorAll('#p13');
+						for (let i = 0; i < p.length; i++) {
+							p[i].innerHTML = i + 1;
+						}
+					}
+				</script> 
+			</div>		
+			<div class='column'>Задание 14</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id="p14">Абзац с текстом.</p>
+				<p id="p14">Абзац с текстом.</p>
+				<p id="p14">Абзац с текстом.</p>
+				<p id="p14">Абзац с текстом.</p>
+				<p id="p14">Абзац с текстом.</p>
+				<p id="p14">Абзац с текстом.</p>
+				<p id="p14">Абзац с текстом.</p>
+				<p id="p14">Абзац с текстом.</p>
+				<input type="submit" value="Нажмите на меня!" onClick='go14()'>
+				<script>
+					function go14() {
+						let p = document.querySelectorAll('#p14');
+						for (let i = 0; i < p.length; i++) {
+							p[i].innerHTML = i + 1 + '. ' + p[i].innerHTML;
+						}
+					}
+				</script> 
+			</div>		
+			<div class='column'>Задание 15</div>
+		</div>
+	<body>
+<html>

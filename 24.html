@@ -1,0 +1,604 @@
+<html>
+	<head><title>24</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<p id='elem'></p>
+				<script>
+					if (true) {
+						let elem = document.querySelector('#elem');
+						elem.classList.add('www');
+						elem.innerHTML = elem.classList;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id='elem' class="www"></p>
+				<script>
+					if (true) {
+						let elem = document.querySelector('#elem');
+						elem.classList.remove('www');
+						elem.innerHTML = elem.classList.length == 0 ? 'No Classes' : elem.classList;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id='elem' class="www"></p>
+				<script>
+					if (true) {
+						let elem = document.querySelector('#elem');
+						elem.innerHTML = elem.classList.contains('www') == false ? 'No Classes' : elem.classList;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id='elem' class="www"></p>
+				<script>
+					if (true) {
+						let elem = document.querySelector('#elem');
+						elem.classList.toggle('www');
+						elem.innerHTML = elem.classList.contains('www') == false ? 'No Classes' : elem.classList;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id='elem' class="www"></p>
+				<script>
+					if (true) {
+						let elem = document.querySelector('#elem');
+						elem.innerHTML = elem.classList.length;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 5</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id='elem' class="www qqq"></p>
+				<script>
+					if (true) {
+						let elem = document.querySelector('#elem');
+						let classes = '';
+						for (let className of elem.classList) {
+							classes += className + ' ';
+						}
+						elem.innerHTML = classes;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 6</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id='elem'>sample text</p>
+				<script>
+					if (true) {
+						let elem = document.querySelector('#elem');
+						elem.style.cssText = 'color: red; font-size: 30px; border: solid';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 7</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id='elem'></p>
+				<script>
+					if (true) {
+						let elem = document.querySelector('#elem');
+						elem.innerHTML = elem.tagName;
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 8</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id='elem'></p>
+				<script>
+					if (true) {
+						let elem = document.querySelector('#elem');
+						elem.innerHTML = elem.tagName.toLowerCase();
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 9</div>
+		</div>
+        
+
+		<div class='exercise'>
+			<div class='column'>
+				<p class="www"></p>
+				<p class="www"></p>
+				<script>
+					if (true) {
+						let elems = document.querySelectorAll('.www');
+						for (let elem of elems) {
+							elem.innerHTML = elem.tagName;
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 10</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<ol></ol>
+				<script>
+					if (true) {
+						let li = document.createElement('li');
+						let ol = document.querySelector('ol');
+						li.innerHTML = 'sample text';
+						ol.appendChild(li);
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 11</div>
+		</div>
+        
+		<div class='exercise'>
+			<div class='column'>
+				<ul></ul>
+				<script>
+					if (true) {
+						let ar = [1, 1, 2, 3, 5];
+						let ul = document.querySelector('ul');
+						for (n of ar) {
+							let li = document.createElement('li');
+							li.innerHTML = n;
+							ul.appendChild(li);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 12</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<ul></ul>
+				<script>
+					if (true) {
+						let ar = [1, 1, 2, 3, 5];
+						let ul = document.querySelector('ul');
+						for (n of ar) {
+							let li = document.createElement('li');
+							li.innerHTML = n;
+							li.addEventListener('click', alertText);
+							ul.appendChild(li);
+						}
+
+						function alertText() {
+							alert(this.innerHTML);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 13</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<ul>
+					<li id="elem"></li>
+				</ul>
+				<script>
+					if (true) {
+						let li_new = document.createElement('li');
+						let li = document.getElementById('elem');
+						let ul = document.getElementsByTagName('ul');
+						li.innerHTML = '!!!';
+						ul.insertBefore(li_new, li);
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 14</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id="elem"></p>
+				<script>
+					if (true) {
+						let p = document.getElementById('elem');
+						p.insertAdjacentHTML('beforeBegin', '<span>!!!</span>');
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 15</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id="elem"></p>
+				<script>
+					if (true) {
+						let p = document.getElementById('elem');
+						p.insertAdjacentHTML('afterEnd', '<span>!!!</span>');
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 16</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div id="elem">
+					<p>Begin</p>
+					<p>End</p>
+				</div>
+				<script>
+					if (true) {
+						let div = document.getElementById('elem');
+						div.insertAdjacentHTML('afterBegin', '<span>!!!</span>');
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 17</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div id="elem">
+					<p>Begin</p>
+					<p>End</p>
+				</div>
+				<script>
+					if (true) {
+						let div = document.getElementById('elem');
+						div.insertAdjacentHTML('beforeEnd', '<span>!!!</span>');
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 18</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div id="elem">
+					<p>Begin</p>
+					<p>End</p>
+				</div>
+				<script>
+					if (true) {
+						let div = document.getElementById('elem');
+						div.firstElementChild.style.color = 'red';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 19</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div id="elem">
+					<p>Begin</p>
+					<p>End</p>
+				</div>
+				<script>
+					if (true) {
+						let div = document.getElementById('elem');
+						div.lastElementChild.style.color = 'red';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 20</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div id="elem">
+					<p>Begin</p>
+					<p>End</p>
+				</div>
+				<script>
+					if (true) {
+						let div = document.getElementById('elem');
+						elems = div.children;
+						for (let elem of elems) {
+							elem.innerHTML += '!';
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 21</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p>Ceil</p>
+				<p id="elem">Mid</p>
+				<p>Floor</p>
+				<script>
+					if (true) {
+						let p = document.getElementById('elem');
+						p.previousElementSibling.innerHTML += '!';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 22</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p>ceil</p>
+				<p id="elem">mid</p>
+				<p>floor</p>
+				<script>
+					if (true) {
+						let p = document.getelementbyid('elem');
+						p.nextElementSibling.innerhtml += '!';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 23</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p>ceil</p>
+				<p id="elem">mid</p>
+				<p>floor1</p>
+				<p>floor2</p>
+				<script>
+					if (true) {
+						let p = document.getElementById('elem');
+						p.nextElementSibling.nextElementSibling.innerHTML += '!';
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 25</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div>
+					<p id="elem">sample text</p>
+				</div>
+				<script>
+					if (true) {
+						let p = document.getElementById('elem');
+						p.parentElement.style.backgroundColor = 'red';
+					}
+				</script>
+			</div>		
+			<div class='column'>задание 25</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div>
+					<p>first level div</p>
+					<div>
+						<p id="elem">second level div</p>
+					</div>
+				</div>
+				<script>
+					if (true) {
+						let p = document.getElementById('elem');
+						p.parentNode.parentNode.style.backgroundColor = 'red';
+					}
+				</script>
+			</div>		
+			<div class='column'>задание 26</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div id="parent">
+					<div id="child">
+						<input type="submit" onclick="rChild()">
+					</div>
+				</div>
+				<script>
+					if (true) {
+						function rChild() {
+							let div = document.getElementById('parent');
+							let div_child = document.getElementById('child');
+							div.removeChild(div_child);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>задание 27</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<ol>
+					<li>first li</li>
+					<input type="submit" onclick="rLastChild()">
+					<li>second li</li>
+				</ol>
+				<script>
+					if (true) {
+						function rLastChild() {
+							let ol = document.querySelector('ol');
+							ol.removeChild(ol.lastElementChild);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>задание 28</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id="29">sample text</p>
+				<script>
+					if (true) {
+						let p = document.querySelector('p');
+						p.addEventListener('click', rElement);
+
+						function rElement() {
+							this.remove();
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>задание 29</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<ol>
+					<li>First li</li>
+					<li>Second li</li>
+				</ol>
+				<script>
+					if (true) {
+                        var elems = document.getElementsByTagName('li');
+                            for (let i = 0; i < elems.length; i++) {
+                                elems[i].addEventListener('click', del_li);
+                            }
+
+						function del_li() {
+							this.remove();
+                        }
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 30</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div id="div31">
+					<input type="text" id="31">
+					<input type="submit" id="btn_31"><br>
+					<script>
+						if (true) {
+							let btn = document.getElementById('btn_31');
+							let input = document.getElementById('31');
+							let div31 = document.getElementById('div31');
+							btn.addEventListener('click', clone_input);
+							
+							function clone_input() {
+								let clone = input.cloneNode(true);
+								div31.append(clone);
+							}
+						}
+					</script>
+				</div>
+			</div>		
+			<div class='column'>Задание 31</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div id="div32">
+					<script>
+						if (true) {
+							let ar = [1, 1, 2, 3, 5];
+							let ul = document.createElement('ul');
+							for (let i of ar) {
+								let li = document.createElement('li');
+								li.innerHTML = i;
+								ul.appendChild(li);
+							}
+						let div32 = document.getElementById('div32');
+						div32.insertAdjacentElement('beforeEnd', ul);
+						}
+					</script>
+				</div>
+			</div>		
+			<div class='column'>Задание 32</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div id="33">
+					<input type='text' id="33">
+					<input type='submit' value="+" onclick="addInput()"><br>
+					<script>
+						if (true) {
+							function addInput() {
+								let new_input = document.createElement('input');
+								let div33 = document.getElementById('33');
+								div33.appendChild(new_input);
+							}
+						}
+					</script>
+				</div>
+			</div>		
+			<div class='column'>Задание 33</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div id="34">
+					<input type="text" onblur="addInput34(this)"><br>
+					<script>
+						if (true) {
+							function addInput34(n) {
+								num = n.value;
+								for (let i = 0; i < num.length; i++) {
+									let input = document.createElement('input');
+									let div34 = document.getElementById('34');
+									input.value = num[i];
+									div34.appendChild(input);
+									let br = document.createElement('br');
+									div34.appendChild(br);
+								}
+							}
+						}
+					</script>
+				</div>
+			</div>		
+			<div class='column'>Задание 34</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<div id="35">Parent<br>
+					<input type="submit" onclick="hideParent()">
+					<script>
+						if (true) {
+							function hideParent() {
+								let div35 = document.getElementById('35');
+								div35.hidden = true;
+							}
+						}
+					</script>
+				</div>
+			</div>		
+			<div class='column'>Задание 35</div>
+		</div>
+	</body>
+<html>

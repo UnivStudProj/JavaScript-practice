@@ -1,0 +1,173 @@
+<html>
+	<head><title>7</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write("js".toUpperCase());
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write("JS".toLowerCase());
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write("я учу javascript!".length);
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var a = "я учу javascript!";
+					document.write("substr = " + a.substr(2, 4) + a.substr(5, 11) + "<br>");
+					document.write("substring = " + a.substring(2, 6) + a.substring(5, 16) + "<br>");
+					document.write("slice = " + a.slice(2, 6) + a.slice(5, 16));
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write("я учу javascript!".indexOf("учу"));
+				</script>
+			</div>		
+			<div class='column'>Задание 5</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var str = "abcde";
+					var n = 4;
+					document.write("n = " + n + "<br>");
+					let res =  n < str.length ? str.slice(0, n) + "..." : str;
+					document.write(res);
+				</script>
+			</div>		
+			<div class='column'>Задание 6</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write("я-учу-javascript!".replace(/-/g, "!"));
+				</script>
+			</div>		
+			<div class='column'>Задание 7</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write("я учу javascript!".split(" "));
+				</script>
+			</div>		
+			<div class='column'>Задание 8</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write("я учу javascript!".split(" "));
+				</script>
+			</div>		
+			<div class='column'>Задание 9</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var date = '2025-12-31';
+					var a = date.split("-");
+					document.write(a[2] + "." + a[1] + "." + a[0]);
+				</script>
+			</div>		
+			<div class='column'>Задание 10</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write(["я", "учу", "javascript", "!"].join("+"));
+				</script>
+			</div>		
+			<div class='column'>Задание 11</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					document.write("javascript"[0].toUpperCase());
+				</script>
+			</div>		
+			<div class='column'>Задание 12</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var a = "я учу javascript!";
+					for (let i = 0; i < a.length; i++) {
+						if (i == 0) {
+							a = a.replace(a[i], a[i].toUpperCase());
+						}
+						if (a[i] == " ") {
+							a = a.replace(a[i + 1], a[i + 1].toUpperCase());
+						}
+					}
+					document.write(a);
+				</script>
+			</div>		
+			<div class='column'>Задание 13</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var a = "var_test_text";
+					var b = a.split("_");
+					var c = [];
+					for (let i = 0; i < b.length; i++) {
+						if (i == 0) {
+							c.push(b[i]);
+							continue;
+						}
+						c.push(b[i][0].toUpperCase() + b[i].slice(1, b[i].length));
+					}
+					document.write(c.join(""));
+				</script>
+			</div>		
+			<div class='column'>Задание 14</div>
+		</div>
+	</body>
+</html>

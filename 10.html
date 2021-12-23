@@ -1,0 +1,68 @@
+<html>
+	<head><title>10</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					function usr_sqr($num) {
+						return $num * $num;
+					}
+					document.write(usr_sqr(25));
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					function usr_sum($num) {
+						return $num + $num;
+					}
+					document.write(usr_sum(25));
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					function usr_sum($num1, $num2, $num3) {
+						return ($num1 - $num2) / $num3;
+					}
+					document.write(usr_sum(25, 24, 23));
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					function usr_sum($num) {
+						let days_of_week = ["Понедельник", "Вторник", "Среда", "Четверег", "Пятница", "Суббота", "Воскресенье"]
+						return (days_of_week[$num - 1]);
+					}
+					document.write(usr_sum(Math.floor(Math.random() * (7 - 1 + 1) + 1)));
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+	</body>
+</html>

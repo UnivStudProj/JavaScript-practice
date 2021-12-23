@@ -1,0 +1,51 @@
+<html>
+	<head><title>17</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					function rec(arr) {
+						document.write(arr[0]);
+						arr.shift();
+						if (arr.length > 0) rec(arr);
+					}
+					rec([1, 1, 2, 3, 5, 8]);
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					function rec(num) {
+						let num_to_str = String(num);
+						let num_sum = 0;
+						for (let i = 0; i < num_to_str.length; i++) {
+							num_sum += Number(i);
+						}
+						if (num_sum > 9) rec(num_sum);
+						document.write(num_sum);
+					}
+					rec(123);
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+	<body>
+<html>

@@ -1,0 +1,95 @@
+<html>
+	<head><title>16</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					function unfirst(str) {
+						let str_arr = str.split(" ");
+						for (let i = 0; i < str_arr.length; i++) {
+							if (str_arr[i][0] === str_arr[i][0].toLowerCase()) {
+								str_arr[i] = str_arr[i][0].toUpperCase() + str_arr[i].slice(1);
+								return str_arr.join(" ");
+							}
+						}
+					}
+					let i_16 = 0;
+					let str_16 = "html css javascript";
+					while (i_16 < str_16.split(" ").length) {
+						str_16 = unfirst(str_16);
+						i_16 += 1;
+					}
+					document.write(str_16);
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					let str_17 = 'var_text_hello';
+					let arr_17 = str_17.split("_");
+					for (let i = 0; i < arr_17.length; i++) {
+						if (arr_17[i][0] == arr_17[i][0].toLowerCase()) {
+							arr_17[i] = arr_17[i][0].toUpperCase() + arr_17[i].slice(1);
+						}
+					}
+					str_17 = arr_17.join("");
+					document.write(str_17);
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					function inArray(text, arr) {
+						for (let i = 0; i < arr.length; i++) {
+							if (arr[i] == text) {
+								return true;
+							}
+						}
+						return false;
+					}
+					document.write(inArray("script", ["java", "script"]));
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					function change_str(str) {
+						let i = 0;
+						let new_str = "";
+						while (i < str.length) {
+							new_str += str[i + 1] + str[i];
+							i += 2;
+						}
+						return new_str;
+					}
+					document.write(change_str("123456"));
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+	<body>
+<html>

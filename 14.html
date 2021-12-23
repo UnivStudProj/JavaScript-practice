@@ -1,0 +1,134 @@
+<html>
+	<head><title>14</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var arr = [];
+					var str = "x";
+					for (let i = 0; i < 5; i++) {
+						arr.push(str);
+						str += "x";
+					}
+					document.write(arr);
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var arr = [];
+					var str = "";
+					for (let i = 1; i <= 4; i++) {
+						for (let j = 1; j <= i; j++) {
+							str += + i.toString();
+							arr[i]= str;
+						}
+						str = "";
+					}
+					arr.shift();
+					document.write(arr);
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var arr = [];
+						function arrayFill(num, amount) {
+							while (amount != 0) {
+								arr.push(num);
+								amount -= 1;
+							}
+						}
+					arrayFill('x', 5);
+					document.write(arr);
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+		
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var arr = [1, 5, 7, 8, 9];
+					var count_i = 0;
+					var arr_sum = 0;
+					while (arr_sum < 10) {
+						arr_sum += arr[count_i];
+						count_i += 1;
+					}
+					document.write(count_i);
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var arr = [1, 5, 7, 8, 9];
+					for (let i = 0; i != arr.length; i++) {
+						arr.unshift(arr[i]);
+						arr.splice(i + 1, 1);
+					}
+					document.write(arr);
+				</script>
+			</div>		
+			<div class='column'>Задание 5</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var arr = [[1, 2, 3], [4, 5], [6]];
+					var sum_arr = 0;
+					for (let i = 0; i < arr.length; i++) {
+						for (let j = 0; j < arr[i].length; j++) {
+							sum_arr += arr[i][j];
+						}
+					}
+					document.write(sum_arr);
+				</script>
+			</div>		
+			<div class='column'>Задание 6</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					var arr = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+					var sum_arr = 0;
+					for (let i = 0; i < arr.length; i++) {
+						for (let j = 0; j < arr[i].length; j++) {
+							for (let k = 0; k < arr[i][j].length; k++) {
+								sum_arr += arr[i][j][k];
+							}
+						}
+					}
+					document.write(sum_arr);
+				</script>
+			</div>		
+			<div class='column'>Задание 7</div>
+		</div>
+	<body>
+<html>

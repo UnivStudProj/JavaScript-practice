@@ -1,0 +1,163 @@
+<html>
+	<head><title>23</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+                <img src="materials/a.png" width="10%" height="10%">
+                <img src="materials/b.png" width="10%" height="10%">
+                <img src="materials/c.png" width="10%" height="10%">
+				<script>
+					if (true) {
+                        var elems = document.getElementsByTagName('img');
+                            for (let i = 0; i < elems.length; i++) {
+                                elems[i].onclick = go;
+                            }
+						function go() {
+                            alert(this.getAttribute('src'));
+                        }
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+                <a href="#" title="">Текст первой ссылки</a><br>
+                <a href="#" title="">Текст второй ссылки</a><br>
+                <a href="#" title="">Текст третьей ссылки</a><br>
+				<script>
+					if (true) {
+                        var elems = document.getElementsByTagName('a');
+                            for (let i = 0; i < elems.length; i++) {
+                                elems[i].addEventListener('mouseover', go);
+                            }
+						function go() {
+                            this.title = this.innerHTML;
+                        }
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+                <a href="http://yandex.ru" title="">Текст первой ссылки</a><br>
+                <a href="http://google.com" title="">Текст второй ссылки</a><br>
+                <a href="http://old.code.mu/" title="">Текст третьей ссылки</a><br>
+				<script>
+					if (true) {
+                        var elems = document.getElementsByTagName('a');
+                            for (let i = 0; i < elems.length; i++) {
+                                elems[i].addEventListener('mouseover', go);
+                            }
+						function go() {
+                            this.innerHTML += '(' + this.href + ')';
+                        }
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+                <a href="http://yandex.ru" title="">Текст первой ссылки</a><br>
+                <a href="http://google.com" title="">Текст второй ссылки</a><br>
+                <a href="http://old.code.mu/" title="">Текст третьей ссылки</a><br>
+				<script>
+					if (true) {
+                        var elems = document.getElementsByTagName('a');
+                            for (let i = 0; i < elems.length; i++) {
+                                elems[i].addEventListener('mouseover', go);
+                            }
+						function go() {
+                            this.innerHTML += '(' + this.href + ')';
+                            this.removeEventListener('mouseover', go)
+                        }
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+                <input type="text" value="1"><br>
+                <input type="text" value="2"><br>
+                <input type="text" value="3"><br>
+                <p id="test"></p>
+				<script>
+					if (true) {
+                        var elems = document.getElementsByTagName('input');
+                        var parag = document.getElementById('test');
+                            for (let i = 0; i < elems.length; i++) {
+                                elems[i].addEventListener('blur', go);
+                            }
+						function go() {
+                            parag.innerHTML = this.value;
+                        }
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 5</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+                <input type="text" value="1"><br>
+                <input type="text" value="2"><br>
+                <input type="text" value="3"><br>
+				<script>
+					if (true) {
+                        var elems = document.getElementsByTagName('input');
+                            for (let i = 0; i < elems.length; i++) {
+                                elems[i].addEventListener('click', go);
+                            }
+						function go() {
+                            alert(this.value);
+                            this.removeEventListener('click', go);
+                        }
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 6</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+                <p>2</p><br>
+                <p>4</p><br>
+                <p>6</p><br>
+				<script>
+					if (true) {
+                        var elems = document.getElementsByTagName('p');
+                            for (let i = 0; i < elems.length; i++) {
+                                elems[i].addEventListener('click', go);
+                            }
+						function go() {
+                            this.innerHTML *= this.innerHTML;
+                        }
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 7</div>
+		</div>
+	<body>
+<html>

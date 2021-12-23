@@ -1,0 +1,66 @@
+<html>
+	<head><title>9</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<script>
+					// example 1
+					var SomeString1 = "abcde";
+					document.write(SomeString1[0].toUpperCase() + SomeString1.substr(1) + "<br>");
+
+					// example 2 
+					var SomeString2 = "abcde";
+					document.write(SomeString2[0].toUpperCase() + SomeString2.slice(1));
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					var SomeStr = "123456";
+					document.write(SomeStr.split("").reverse().join(""));
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					var SomeStr1 = "http://str";
+					var res1 = SomeStr1.slice(0, 7) == "http://" ? true : false;
+					document.write(res1);
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div> 
+        
+        <div class='exercise'>
+			<div class='column'>
+				<script>
+					var SomeStr = "str.html";
+					var res = SomeStr.indexOf(".html") != -1 ? true : false;
+					document.write(res);
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+	</body>
+</html>
