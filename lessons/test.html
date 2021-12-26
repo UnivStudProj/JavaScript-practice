@@ -1,5 +1,5 @@
 <html>
-	<head><title>23</title></head>
+	<head><title>25</title></head>
 	<body>
 		<style>
 			body {
@@ -15,22 +15,35 @@
 			vertical-align: middle;
 			text-align:center;
 			}
+			.border {
+				border: 3px solid purple;
+			}
+			.scrollHeight {
+				width: 100px;
+				height: 10px;
+				padding: 5px;
+				overflow: auto;
+			}
+			.scrollWidth {
+				width: 100px;
+				padding: 5px;
+				white-space: nowrap;
+				overflow: auto;
+			}
 		</style>
 		<div class='exercise'>
 			<div class='column'>
-				<div id="35">Parent<br>
-					<input type="submit" onclick="hideParent()">
-					<script>
-						if (true) {
-							function hideParent() {
-								let div35 = document.getElementById('35');
-								div35.hidden = true;
-							}
+				<input type="submit" id="b13" class="scrollWidth" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b13');
+							alert(input.scrollWidth);
 						}
-					</script>
-				</div>
+					}
+				</script>
 			</div>		
-			<div class='column'>Задание 35</div>
+			<div class='column'>Задание 13</div>
 		</div>
 	<body>
 <html>

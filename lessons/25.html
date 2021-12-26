@@ -1,0 +1,223 @@
+<html>
+	<head><title>25</title></head>
+	<body>
+		<style>
+			body {
+			background-color: Gray;
+			font-size: 25px;
+			}
+			.exercise {
+			border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+			display: inline-block;
+			width: 48%;
+			vertical-align: middle;
+			text-align:center;
+			}
+			.border {
+				border: 3px solid purple;
+			}
+			.scrollHeight {
+				width: 100px;
+				height: 10px;
+				padding: 5px;
+				overflow: auto;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b1" class="border" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b1');
+							alert(input.clientTop);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b2" class="border" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b2');
+							alert(input.clientLeft);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b3" class="border" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b3');
+							alert(input.offsetWidth);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b4" class="border" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b4');
+							alert(input.offsetHeight);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 4</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b5" class="border" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b5');
+							alert(input.clientWidth);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 5</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b6" class="border" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b6');
+							alert(input.clientHeight);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 6</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b7" class="border" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b7');
+							alert('width = ' + getComputedStyle(input).width + '\nheight = ' + getComputedStyle(input).height);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 7</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b8" class="border" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b8');
+							alert(input.scrollTop);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 8</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b9" class="border" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b9');
+							alert(input.scrollLeft);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 9</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b10" class="border" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b10');
+							input.scrollTop = 100;
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 10</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b11" class="border" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b11');
+							input.scrollTop += 100;
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 11</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b12" class="scrollHeight" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b12');
+							alert(input.scrollHeight);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 12</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" id="b13" class="scrollWidth" onclick="getSize()">
+				<script>
+					if (true) {
+						function getSize() {
+							let input = document.getElementById('b13');
+							alert(input.scrollWidth);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 13</div>
+		</div>
+	<body>
+<html>
