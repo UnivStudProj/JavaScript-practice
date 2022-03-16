@@ -3,17 +3,17 @@
 	<body>
 		<style>
 			body {
-			background-color: Gray;
-			font-size: 25px;
+				background-color: Gray;
+				font-size: 25px;
 			}
 			.exercise {
-			border: thick solid rgb(71, 71, 71);
+				border: thick solid rgb(71, 71, 71);
 			}
 			.column {
-			display: inline-block;
-			width: 48%;
-			vertical-align: middle;
-			text-align:center;
+				display: inline-block;
+				width: 48%;
+				vertical-align: middle;
+				text-align:center;
 			}
 			.border {
 				border: 3px solid purple;
@@ -218,6 +218,126 @@
 				</script>
 			</div>		
 			<div class='column'>Задание 13</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p>sample text</p>
+				<input type="submit" class="scrollWidth" onclick="func14()">
+				<script>
+					if (true) {
+						function func14() {
+							let total_height = elem.scrollHeight;
+							let need_height = total_height - 100;
+							elem.scrollTop = needed_height;
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 14</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p>sample text</p>
+				<input type="submit" class="scrollWidth" onclick="func15()">
+				<script>
+					if (true) {
+						function func15() {
+							alert(pageYOffset);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 15</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p>sample text</p>
+				<input type="submit" class="scrollWidth" onclick="func16()">
+				<script>
+					if (true) {
+						function func16() {
+							alert(pageXOffset);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 16</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" class="scrollWidth" onclick="func17()">
+				<script>
+					if (true) {
+						function func17() {
+							window.scrollTo(300, 500);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 17</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" class="scrollWidth" onclick="func18()">
+				<script>
+					if (true) {
+						function func18() {
+							window.scrollBy(0, 300);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 18</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" class="scrollWidth" onclick="func19()">
+				<script>
+					if (true) {
+						function func19() {
+							window.scrollTo(0, document.body.clientHeight);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 19</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" class="scrollWidth" onclick="func20()">
+				<script>
+					if (true) {
+						function func20() {
+							window.scrollBy(0, 400);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 20</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<p id="elem22">sample text</p>
+				<script>
+					if (true) {
+                        let elem = document.getElementById('elem22');
+						elem.addEventListener('click', func22);
+						function func22() {
+							this.style.width = this.offsetWidth * 2 + 'px';
+							this.style.height = this.offsetHeight * 2 + 'px';
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 22</div>
 		</div>
 	<body>
 <html>

@@ -1,49 +1,82 @@
 <html>
-	<head><title>25</title></head>
+	<head><title>29</title></head>
 	<body>
 		<style>
 			body {
-			background-color: Gray;
-			font-size: 25px;
+				background-color: Gray;
+				font-size: 25px;
+				text-align: center;
 			}
 			.exercise {
-			border: thick solid rgb(71, 71, 71);
-			}
-			.column {
-			display: inline-block;
-			width: 48%;
-			vertical-align: middle;
-			text-align:center;
-			}
-			.border {
-				border: 3px solid purple;
-			}
-			.scrollHeight {
-				width: 100px;
-				height: 10px;
-				padding: 5px;
-				overflow: auto;
-			}
-			.scrollWidth {
-				width: 100px;
-				padding: 5px;
-				white-space: nowrap;
-				overflow: auto;
+				border: thick solid rgb(71, 71, 71);
 			}
 		</style>
-		<div class='exercise'>
-			<div class='column'>
-				<input type="submit" id="b13" class="scrollWidth" onclick="getSize()">
-				<script>
-					if (true) {
-						function getSize() {
-							let input = document.getElementById('b13');
-							alert(input.scrollWidth);
+		<p><b>6</b></p>
+		<div class="exercise">
+			<select id="s6-day"></select>
+			<select id="s6-month"></select>
+			<select id="s6-year"></select>
+
+			<script>
+				if (true) {
+					let yearEl = document.querySelector('#s6-year');
+					let monthEl = document.querySelector('#s6-month');
+					let dayEl = document.querySelector('#s6-day');
+
+					let date = new Date();
+					let currentYear = date.getFullYear();
+					let currentMonth = date.getMonth() + 1;
+					let currentDay = date.getDate();
+
+					fillSelect(yearEl, range(currentYear - 10, currentYear + 10));
+					fillSelect(monthEl, range(1, 12));
+					fillSelect(dayEl, range(1, 31));
+
+					yearEl.value = currentYear;
+					monthEl.value = currentMonth;
+					dayEl.value = currentDay;
+
+					yearEl.addEventListener('focus', selectFocusHandle);
+					monthEl.addEventListener('focus', selectFocusHandle);
+					dayEl.addEventListener('focus', selectFocusHandle);
+
+					yearEl.addEventListener('change', selectChangeHandle);
+					monthEl.addEventListener('change', selectChangeHandle);
+					dayEl.addEventListener('change', selectChangeHandle);
+
+					function selectChangeHandle() {
+						if (!checkDate(yearEl.value, monthEl.value, dayEl.value)) {
+							this.value = this.dataset.default;
 						}
 					}
-				</script>
-			</div>		
-			<div class='column'>Задание 13</div>
+
+					function selectFocusHandle() {
+						this.dataset.default = this.value;
+					}
+
+					function fillSelect(select, arr) {
+						arr.forEach(function (elem) {
+							select.add(new Option(elem));
+						});
+					}
+
+					function range(from, to) {
+						let result = [];
+						for (let i = from; i <= to; i++) {
+							result.push(i);
+						}
+
+						return result;
+					}
+
+					function checkDate(year, month, day) {
+						let date = new Date(year, month - 1, day);
+						return date.getFullYear() == year
+							&& date.getMonth() == month - 1
+							&& date.getDate() == day; 
+					}
+				}
+			</script>
 		</div>
 	<body>
 <html>

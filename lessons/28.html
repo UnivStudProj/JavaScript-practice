@@ -1,0 +1,94 @@
+<html>
+	<head><title>28</title></head>
+	<body>
+		<style>
+			body {
+				background-color: Gray;
+				font-size: 25px;
+				text-align: center;
+			}
+			.exercise {
+				border: thick solid rgb(71, 71, 71);
+			}
+			form  { display: table;}
+			span  { display: table-row;}
+			label { display: table-cell;}
+		</style>
+		<p><b>1</b></p>
+		<div class="exercise">
+			<ul>
+				<li>sample text</li>
+				<li>sample text</li>
+				<li>sample text</li>
+			</ul>
+			<input type="submit" onclick="add_li()">
+			<script>
+				if (true) {
+					var ul = document.querySelector('ul');
+					ul.addEventListener('click', addSign);
+
+					function addSign() {
+						event.target.innerHTML += '!';
+					}
+
+					function add_li() {
+						let li = document.createElement('li');
+
+						li.innerHTML = 'sample text';
+						ul.appendChild(li);
+					}
+				}
+			</script>
+		</div>
+
+		<p><b>2</b></p>
+		<div class="exercise">
+			<table>
+				<tr>
+					<td>Name1</td>
+					<td>Surname1</td>
+				</tr>
+				<tr>
+					<td>Name2</td>
+					<td>Surname2</td>
+				</tr>
+			</table>
+			<form action="">
+				<span>
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="user_name">
+				</span>
+				<span>
+					<label for="surname">Surname:</label>
+					<input type="text" id="surname" name="user_surname">
+				</span>
+			</form>
+			<button onclick="addRow()">Send</button>
+			<script>
+				if (true) {
+					var table = document.querySelector('table');
+					table.addEventListener('click', callPrompt);
+
+					function callPrompt() {
+						let input = window.prompt('', 'sample text');
+						event.target.innerHTML = input;
+					}
+
+					function addRow() {
+						let name = document.getElementById('name');
+						let surname = document.getElementById('surname');
+
+						let row = table.insertRow();
+						let cell0 = row.insertCell(0);
+						let text0 = document.createTextNode(name.value);
+						let cell1 = row.insertCell(1);
+						let text1 = document.createTextNode(surname.value);
+
+						cell0.appendChild(text0);
+						cell1.appendChild(text1);
+					}
+				}
+			</script>
+		</div>
+	<body>
+<html>

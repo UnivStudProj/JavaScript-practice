@@ -1,0 +1,149 @@
+<html>
+	<head><title>27</title></head>
+	<body>
+		<style>
+			body {
+				background-color: Gray;
+				font-size: 25px;
+			}
+			.exercise {
+				border: thick solid rgb(71, 71, 71);
+			}
+			.num {
+				text-align: center;
+			}
+			.box {
+				width: 100px;
+				height: 100px;
+				border: 1px solid red;
+				position: absolute;
+			}
+		</style>
+		<p class="num"><b>1</b></p>
+		<div id="show1" class="exercise">
+			<script>
+				if (true) {
+					document.getElementById('show1').onmousemove = func1;
+					function func1(event) {
+						this.innerHTML = `X: ${event.clientX} Y: ${event.clientY}`;
+					}
+				}
+			</script>
+		</div>
+
+		<p class="num"><b>2</b></p>
+		<div id="show2" class="exercise">
+			<div id="2" class="box"></div>
+			<script>
+				if (true) {
+					document.getElementById('show2').onclick = func2;
+					function func2(event) {
+						let box = document.getElementById('2');
+						box.style.left = event.clientX + 'px';
+						box.style.top = event.clientY + 'px';
+					}
+				}
+			</script>
+		</div>
+
+		<p class="num"><b>3</b></p>
+		<div id="show3" class="exercise">
+			<div id="3" class="box"></div>
+			<script>
+				if (true) {
+					document.getElementById('show3').onclick = func3;
+					function func3(event) {
+						let box = document.getElementById('3');
+						box.style.left = event.clientX - box.clientWidth / 2 + 'px';
+						box.style.top = event.clientY - box.clientHeight / 2 + 'px';
+					}
+				}
+			</script>
+		</div>
+
+		<p class="num"><b>4</b></p>
+		<div class="exercise">
+			<input onkeypress="func4(event)">
+			<p>Pressed button code: <span id="show4">?</span></p>
+			<script>
+				if (true) {
+					function func4(event) {
+						document.getElementById('show4').innerHTML = event.which;
+					}
+				}
+			</script>
+		</div>
+
+		<p class="num"><b>5</b></p>
+		<div class="exercise">
+			<input onkeypress="func5(event)">
+			<p>Pressed button: <span id="show5">?</span></p>
+			<script>
+				if (true) {
+					function func5(event) {
+						document.getElementById('show5').innerHTML = String.fromCharCode(event.which);
+					}
+				}
+			</script>
+		</div>
+
+		<p class="num"><b>6</b></p>
+		<div class="exercise">
+			<p id="show6">sample text</p>
+			<script>
+				if (true) {
+					let elem = document.getElementById('show6');
+					elem.addEventListener('click', func6);
+
+					function func6(event) {
+						this.style.backgroundColor = event.ctrlKey ? 'red' : '';
+					}
+				}
+			</script>
+		</div>
+
+		<p class="num"><b>7</b></p>
+		<div class="exercise">
+			<p id="show7">sample text</p>
+			<script>
+				if (true) {
+					let elem = document.getElementById('show7');
+					elem.addEventListener('click', func7);
+
+					function func7(event) {
+						if (event.ctrlKey) {
+							this.innerHTML = '1';
+						} else if (event.altKey) {
+							this.innerHTML = '2';
+						} else if (event.shiftKey) {
+							this.innerHTML = '3';
+						}
+					}
+				}
+			</script>
+		</div>
+
+		<p class="num"><b>8</b></p>
+		<div class="exercise">
+			<div id="e8">
+				<input id="show8">
+				<script>
+					if (true) {
+						let input = document.getElementById('show8');
+						input.onkeypress = func8;
+
+						function func8(event) {
+							if (event.keyCode == 13) {
+								let div = document.getElementById('e8');
+								let p = document.createElement('p');
+
+								p.innerHTML = input.value;
+								div.appendChild(p);
+							}
+						}
+					}
+				</script>
+			</div>
+		</div>
+	<body>
+<html>

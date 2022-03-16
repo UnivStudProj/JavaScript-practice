@@ -1,0 +1,61 @@
+<html>
+	<head><title>26</title></head>
+	<body>
+		<style>
+			body {
+				background-color: Gray;
+				font-size: 25px;
+			}
+			.exercise {
+				border: thick solid rgb(71, 71, 71);
+			}
+			.column {
+				display: inline-block;
+				width: 48%;
+				vertical-align: middle;
+				text-align:center;
+			}
+		</style>
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" class="scrollWidth" onclick="func1()">
+				<script>
+					if (true) {
+						function func1() {
+							alert(document.documentElement.clientHeight);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 1</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" class="scrollWidth" onclick="func2()">
+				<script>
+					if (true) {
+						function func2() {
+							window.scrollBy(0, window.innerHeight);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 2</div>
+		</div>
+
+		<div class='exercise'>
+			<div class='column'>
+				<input type="submit" class="scrollWidth" onclick="func3()">
+				<script>
+					if (true) {
+						function func3() {
+							alert(window.pageYOffset);
+						}
+					}
+				</script>
+			</div>		
+			<div class='column'>Задание 3</div>
+		</div>
+	<body>
+<html>

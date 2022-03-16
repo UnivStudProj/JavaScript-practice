@@ -1,0 +1,206 @@
+<html>
+	<head><title>29</title></head>
+	<body>
+		<style>
+			body {
+				background-color: Gray;
+				font-size: 25px;
+				text-align: center;
+			}
+			.exercise {
+				border: thick solid rgb(71, 71, 71);
+			}
+		</style>
+		<p><b>1</b></p>
+		<div class="exercise">
+			<form id="form1">
+				<input name="input1" value="1">
+				<input name="input1" value="2">
+			</form>
+			<button onclick="func1()">Send</button>
+			<script>
+				if (true) {
+					function func1() {
+						let form = document.getElementById('form1');
+						let inputs = form.elements.input1;
+						let sum = 0;
+						for (let i = 0; i < inputs.length; i++) {
+							sum += parseInt(inputs[i].value);
+						}
+						alert(sum);
+					}
+				}
+			</script>
+		</div>
+
+		<p><b>2</b></p>
+		<div class="exercise">
+			<form name="form2">
+				<input name="input2" value="1">
+				<input name="input2" value="2">
+			</form>
+			<form name="form2">
+				<input name="input2" value="3">
+				<input name="input2" value="4">
+			</form>
+			<button onclick="func2()">Send</button>
+			<script>
+				if (true) {
+					function func2() {
+						let forms = document.forms;
+						let sum = 0;
+						for (let form of forms) {
+							for (let input of form) {
+								sum += parseInt(input.value);
+							}
+						}
+						alert(sum);
+					}
+				}
+			</script>
+		</div>
+
+		<p><b>3</b></p>
+		<div class="exercise">
+			<select id="s2">
+				<option value="1">sample text1</option>
+				<option value="2">sample text2</option>
+			</select>
+			<input id="input2">
+			<script>
+				if (true) {
+					let select = document.getElementById('s2');
+					select.addEventListener('change', func2);
+
+					function func2() {
+						let options = select.options;
+						let input = document.getElementById('input2');
+
+						input.value = options[select.selectedIndex].innerHTML;
+					}
+				}
+			</script>
+		</div>
+
+		<p><b>4</b></p>
+		<div class="exercise">
+			<select id="s4">
+				<option value="1">sample text1</option>
+				<option value="2">sample text2</option>
+			</select>
+			<input id="input4">
+			<button onclick="func4()">Send</button>
+			<script>
+				if (true) {
+					function func4() {
+						let select = document.getElementById('s4');
+						let input = document.getElementById('input4');
+						select.selectedIndex = input.value - 1;
+					}
+				}
+			</script>
+		</div>
+
+		<p><b>5</b></p>
+		<div class="exercise">
+			<div id="ex5">
+				<select id="s5">
+					<option value="1">country1</option>
+					<option value="2">country2</option>
+				</select>
+				<script>
+					if (true) {
+						let select = document.getElementById('s5');
+						select.addEventListener('change', addSelect);
+						var count = 0;
+
+						function addSelect() {
+							if (count == 2) { return };
+							let div = document.getElementById('ex5');
+							let new_select = document.createElement('select');
+							let options = select.options;
+
+							div.appendChild(new_select);
+							for (let i = 0; i < 5; i++) {
+								let new_option = document.createElement('option');
+								let option_value = options[select.selectedIndex].value + i;
+								new_option.value = option_value + i;
+								new_option.innerHTML = `city${option_value + i}`;
+								new_select.appendChild(new_option);
+							}
+							count += 1;
+						}
+					}
+				</script>
+			</div>
+		</div>
+
+		<p><b>6</b></p>
+		<div class="exercise">
+			<select id="s6-day"></select>
+			<select id="s6-month"></select>
+			<select id="s6-year"></select>
+
+			<script>
+				if (true) {
+					let yearEl = document.querySelector('#s6-year');
+					let monthEl = document.querySelector('#s6-month');
+					let dayEl = document.querySelector('#s6-day');
+
+					let date = new Date();
+					let currentYear = date.getFullYear();
+					let currentMonth = date.getMonth() + 1;
+					let currentDay = date.getDate();
+
+					fillSelect(yearEl, range(currentYear - 10, currentYear + 10));
+					fillSelect(monthEl, range(1, 12));
+					fillSelect(dayEl, range(1, 31));
+
+					yearEl.value = currentYear;
+					monthEl.value = currentMonth;
+					dayEl.value = currentDay;
+
+					yearEl.addEventListener('focus', selectFocusHandle);
+					monthEl.addEventListener('focus', selectFocusHandle);
+					dayEl.addEventListener('focus', selectFocusHandle);
+
+					yearEl.addEventListener('change', selectChangeHandle);
+					monthEl.addEventListener('change', selectChangeHandle);
+					dayEl.addEventListener('change', selectChangeHandle);
+
+					function selectChangeHandle() {
+						if (!checkDate(yearEl.value, monthEl.value, dayEl.value)) {
+							this.value = this.dataset.default;
+						}
+					}
+
+					function selectFocusHandle() {
+						this.dataset.default = this.value;
+					}
+
+					function fillSelect(select, arr) {
+						arr.forEach(function (elem) {
+							select.add(new Option(elem));
+						});
+					}
+
+					function range(from, to) {
+						let result = [];
+						for (let i = from; i <= to; i++) {
+							result.push(i);
+						}
+
+						return result;
+					}
+
+					function checkDate(year, month, day) {
+						let date = new Date(year, month - 1, day);
+						return date.getFullYear() == year
+							&& date.getMonth() == month - 1
+							&& date.getDate() == day; 
+					}
+				}
+			</script>
+		</div>
+	<body>
+<html>
