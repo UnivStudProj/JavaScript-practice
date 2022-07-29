@@ -5,6 +5,7 @@ const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 10
 const renderer = new THREE.WebGLRenderer();
 
 renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(devicePixelRatio);
 
 document.body.appendChild(renderer.domElement);
 
@@ -14,4 +15,13 @@ const mesh = new THREE.Mesh(boxGeometry, material);
 
 scene.add(mesh);
 camera.position.z = 5;
-renderer.render(scene, camera);
+
+function animate() {
+    renderer.render(scene, camera);
+    mesh.rotation.x += 0.01;
+    mesh.rotation.y += 0.01;
+
+    requestAnimationFrame(animate);
+}
+
+animate();
