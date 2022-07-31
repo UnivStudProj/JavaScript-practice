@@ -17,6 +17,10 @@ const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
 
 scene.add(planeMesh);
 
+const light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(0, 0, 1);
+scene.add(light);
+
 function animate() {
     renderer.render(scene, camera);
 
