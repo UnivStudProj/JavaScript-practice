@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import * as dat from 'dat.gui';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 const gui = new dat.GUI();
 const world = {
@@ -41,8 +42,9 @@ const renderer = new THREE.WebGLRenderer();
 
 renderer.setSize(innerWidth, innerHeight);
 renderer.setPixelRatio(devicePixelRatio);
-
 document.body.appendChild(renderer.domElement);
+
+const controls = new OrbitControls(camera, renderer.domElement);
 
 camera.position.z = 5;
 
@@ -68,6 +70,10 @@ for (let i = 0; i < array.length; i += 3) {
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(0, 0, 1);
 scene.add(light);
+
+const backLight = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(0, 0, -1);
+scene.add(backLight);
 
 function animate() {
     renderer.render(scene, camera);
