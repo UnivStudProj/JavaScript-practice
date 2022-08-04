@@ -72,7 +72,7 @@ light.position.set(0, 0, 1);
 scene.add(light);
 
 const backLight = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(0, 0, -1);
+backLight.position.set(0, 0, -1);
 scene.add(backLight);
 
 function animate() {
@@ -82,3 +82,13 @@ function animate() {
 }
 
 animate();
+
+const mouse = {
+    x: undefined,
+    y: undefined,
+}
+
+addEventListener('mousemove', (event) => {
+    mouse.x = event.clientX / innerWidth * 2 - 1,
+    mouse.y = -event.clientY / innerHeight * 2 + 1
+});
