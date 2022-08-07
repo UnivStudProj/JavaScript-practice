@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import * as dat from 'dat.gui';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
+import gsap from 'gsap';
 
 const gui = new dat.GUI();
 const world = {
@@ -47,8 +48,6 @@ document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
-camera.position.z = 5;
-
 const planeGeometry = new THREE.PlaneGeometry(10, 10, 10, 10);
 const planeMaterial = new THREE.MeshPhongMaterial({
     side: THREE.DoubleSide,
@@ -58,6 +57,7 @@ const planeMaterial = new THREE.MeshPhongMaterial({
 const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
 
 scene.add(planeMesh);
+camera.position.z = 5;
 
 const {array} = planeMesh.geometry.attributes.position;
 for (let i = 0; i < array.length; i += 3) {
@@ -70,7 +70,7 @@ for (let i = 0; i < array.length; i += 3) {
 
 const colors = [];
 for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
-    colors.push(1, 0, 0);
+    colors.push(0, 0.19, 0.4);
 }
 
 planeMesh.geometry.setAttribute(
@@ -104,22 +104,38 @@ function animate() {
     if (intersects.length > 0) {
         const {color} = intersects[0].object.geometry.attributes;
 
-        // vertice 1
-        color.setX(intersects[0].face.a, 0);
-        color.setY(intersects[0].face.a, 0);
-        color.setZ(intersects[0].face.a, 1);
+        const hoverColor = {
+            r: 0.1,
+            g: 0.5,
+            b: 1
+        };
 
-        // vertice 2
-        color.setX(intersects[0].face.b, 0);
-        color.setY(intersects[0].face.b, 0);
-        color.setZ(intersects[0].face.b, 1);
+        const initialColor = {
+            r: 0,
+            g: 0.19,
+            b: 0.4,
+            duration: 1,
+            onUpdate: () => {
+                // vertice 1
+                color.setX(intersects[0].face.a, hoverColor.r);
+                color.setY(intersects[0].face.a, hoverColor.g);
+                color.setZ(intersects[0].face.a, hoverColor.b);
 
-        // vertice 3
-        color.setX(intersects[0].face.c, 0);
-        color.setY(intersects[0].face.c, 0);
-        color.setZ(intersects[0].face.c, 1);
+                // vertice 2
+                color.setX(intersects[0].face.b, hoverColor.r);
+                color.setY(intersects[0].face.b, hoverColor.g);
+                color.setZ(intersects[0].face.b, hoverColor.b);
 
-        color.needsUpdate = true;
+                // vertice 3
+                color.setX(intersects[0].face.c, hoverColor.r);
+                color.setY(intersects[0].face.c, hoverColor.g);
+                color.setZ(intersects[0].face.c, hoverColor.b);
+
+                color.needsUpdate = true;
+            }
+        };
+
+        gsap.to(hoverColor, initialColor);
     }
 
     requestAnimationFrame(animate);
