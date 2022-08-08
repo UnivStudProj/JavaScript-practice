@@ -6,17 +6,36 @@ import gsap from 'gsap';
 const gui = new dat.GUI();
 const world = {
     plane: {
-        width: 10,
-        height: 10,
-        widthSegments: 10,
-        heightSegments: 10
+        width: 19,
+        height: 19,
+        widthSegments: 17,
+        heightSegments: 17
     }
 }
 
-gui.add(world.plane, 'width', 1, 20).onChange(generatePlane);
-gui.add(world.plane, 'height', 1, 20).onChange(generatePlane);
+gui.add(world.plane, 'width', 1, 50).onChange(generatePlane);
+gui.add(world.plane, 'height', 1, 50).onChange(generatePlane);
 gui.add(world.plane, 'widthSegments', 1, 50).onChange(generatePlane);
 gui.add(world.plane, 'heightSegments', 1, 50).onChange(generatePlane);
+
+const raycaster = new THREE.Raycaster();
+const scene = new THREE.Scene();
+const renderer = new THREE.WebGLRenderer();
+let camera;
+
+const planeGeometry = new THREE.PlaneGeometry(
+    world.plane.width,
+    world.plane.height,
+    world.plane.widthSegments,
+    world.plane.heightSegments
+);
+const planeMaterial = new THREE.MeshPhongMaterial({
+    side: THREE.DoubleSide,
+    flatShading: THREE.FlatShading,
+    vertexColors: true
+});
+const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
+
 
 function generatePlane() {
     planeMesh.geometry.dispose();
@@ -35,48 +54,17 @@ function generatePlane() {
         
         array[i + 2] = z + Math.random();
     }
+
+    const colors = [];
+    for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
+        colors.push(0, 0.19, 0.4);
+    }
+
+    planeMesh.geometry.setAttribute(
+        'color', 
+        new THREE.BufferAttribute(new Float32Array(colors), 3)
+    );
 }
-
-const raycaster = new THREE.Raycaster();
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
-
-renderer.setSize(innerWidth, innerHeight);
-renderer.setPixelRatio(devicePixelRatio);
-document.body.appendChild(renderer.domElement);
-
-const controls = new OrbitControls(camera, renderer.domElement);
-
-const planeGeometry = new THREE.PlaneGeometry(10, 10, 10, 10);
-const planeMaterial = new THREE.MeshPhongMaterial({
-    side: THREE.DoubleSide,
-    flatShading: THREE.FlatShading,
-    vertexColors: true
-});
-const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
-
-scene.add(planeMesh);
-camera.position.z = 5;
-
-const {array} = planeMesh.geometry.attributes.position;
-for (let i = 0; i < array.length; i += 3) {
-    const x = array[i];
-    const y = array[i + 1];
-    const z = array[i + 2];
-    
-    array[i + 2] = z + Math.random();
-}
-
-const colors = [];
-for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
-    colors.push(0, 0.19, 0.4);
-}
-
-planeMesh.geometry.setAttribute(
-    'color', 
-    new THREE.BufferAttribute(new Float32Array(colors), 3)
-);
 
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(0, 0, 1);
@@ -95,6 +83,23 @@ addEventListener('mousemove', (event) => {
     mouse.x = event.clientX / innerWidth * 2 - 1,
     mouse.y = -event.clientY / innerHeight * 2 + 1
 });
+addEventListener('resize', init);
+
+// create main scene
+function init() {
+    camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1000);
+
+    renderer.setSize(innerWidth, innerHeight);
+    renderer.setPixelRatio(devicePixelRatio);
+
+    console.log(document.querySelector('canvas'));
+    document.body.appendChild(renderer.domElement);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+
+    scene.add(planeMesh);
+    camera.position.z = 5;
+}
 
 function animate() {
     renderer.render(scene, camera);
@@ -141,4 +146,6 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
+init();
+generatePlane();
 animate();
