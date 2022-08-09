@@ -6,10 +6,10 @@ import gsap from 'gsap';
 const gui = new dat.GUI();
 const world = {
     plane: {
-        width: 19,
-        height: 19,
-        widthSegments: 17,
-        heightSegments: 17
+        width: 24,
+        height: 24,
+        widthSegments: 25,
+        heightSegments: 25
     }
 }
 
@@ -36,7 +36,6 @@ const planeMaterial = new THREE.MeshPhongMaterial({
 });
 const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
 
-
 function generatePlane() {
     planeMesh.geometry.dispose();
     planeMesh.geometry = new THREE.PlaneGeometry(
@@ -46,15 +45,27 @@ function generatePlane() {
         world.plane.heightSegments
     );
 
+    // vertice position randomization
     const {array} = planeMesh.geometry.attributes.position;
-    for (let i = 0; i < array.length; i += 3) {
-        const x = array[i];
-        const y = array[i + 1];
-        const z = array[i + 2];
-        
-        array[i + 2] = z + Math.random();
+    const randomValues = [];
+    for (let i = 0; i < array.length; i++) {
+        if (i % 3 == 0) {
+            const x = array[i];
+            const y = array[i + 1];
+            const z = array[i + 2];
+            
+            array[i] = x + Math.random() - 0.5;
+            array[i + 1] = y + Math.random() - 0.5;
+            array[i + 2] = z + Math.random();
+        }
+
+        randomValues.push(Math.random() - 0.5);
     }
 
+    planeMesh.geometry.attributes.position.randomValues = randomValues;
+    planeMesh.geometry.attributes.position.originalPosition = array;
+
+    // color attribute addition
     const colors = [];
     for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
         colors.push(0, 0.19, 0.4);
@@ -92,7 +103,6 @@ function init() {
     renderer.setSize(innerWidth, innerHeight);
     renderer.setPixelRatio(devicePixelRatio);
 
-    console.log(document.querySelector('canvas'));
     document.body.appendChild(renderer.domElement);
 
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -101,11 +111,20 @@ function init() {
     camera.position.z = 5;
 }
 
+let frame = 0;
 function animate() {
     renderer.render(scene, camera);
     raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObject(planeMesh);
+    frame += 0.01;
 
+    const {array, originalPosition, randomValues} = planeMesh.geometry.attributes.position;
+    for (let i = 0; i < array.length; i += 3) {
+        array[i] = originalPosition[i] + Math.cos(frame + randomValues[i]) * 0.003; 
+        array[i + 1] = originalPosition[i + 1] + Math.sin(frame + randomValues[i + 1]) * 0.003; 
+    }
+    planeMesh.geometry.attributes.position.needsUpdate = true;
+
+    const intersects = raycaster.intersectObject(planeMesh);
     if (intersects.length > 0) {
         const {color} = intersects[0].object.geometry.attributes;
 
